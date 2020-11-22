@@ -109,11 +109,6 @@ export default function designsystem() {
           </div>
         </div>
       </section>
-      <section className="form-element">
-        <div className="container">
-          <h2>Form Elements</h2>
-        </div>
-      </section>
     </Layout>
   )
 }
