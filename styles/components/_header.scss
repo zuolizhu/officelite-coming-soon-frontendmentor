@@ -1,0 +1,17 @@
+.header {
+  padding: 4.6rem 0 0;
+  @media (min-width: 768px) {
+    padding: 7.2rem 3.9rem 0;
+  }
+  @media (min-width: 1024px) {
+    padding: 8.1rem 4rem 0;
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    @media (min-width: 768px) {
+      justify-content: flex-start;
+    }
+  }
+}
