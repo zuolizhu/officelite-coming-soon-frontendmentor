@@ -55,3 +55,11 @@ button {
     background-color: var(--color-white);
   }
 }
+
+.btn-shadow-blue {
+  box-shadow: 0 2.5rem 2.5rem -1rem rgba(63,91,194,0.25);
+}
+
+.btn:focus {
+  outline: var(--outline);
+}
