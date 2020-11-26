@@ -5,7 +5,7 @@ import HomeCountDown from '../components/home/HomeCountDown'
 
 export default function Home() {
   return (
-    <Layout>
+    <Layout isHomepage={true}>
       <HomeHero />      
       <HomePlans />
       <HomeCountDown isStatic={true} />

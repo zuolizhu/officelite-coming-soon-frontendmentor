@@ -3,8 +3,10 @@ import Header from '../components/Header'
 
 export default function Layout({
   children,
+  isHomepage,
   title = 'Frontend Mentor | Officelite coming soon site'
 }) {
+  const mainClasses = isHomepage ? 'main home' : 'main'
   return (
     <>
       <Head>
@@ -15,8 +17,8 @@ export default function Layout({
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet" />
       </Head>
-      <Header/>
-      <main>
+      <Header isHomepage={isHomepage} />
+      <main className={mainClasses}>
         {children}
       </main>
     </>

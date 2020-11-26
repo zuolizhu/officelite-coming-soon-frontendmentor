@@ -10,16 +10,20 @@ export default function HomeCountDown({ isStatic }) {
           <p className="t-coming"><span className="t-white">Coming</span> <span className="t-blue">4 Nov 2020</span></p>
           <div className="static-countdown">
             <div className="static-countdown__card">
-              <span className="t-counter-number">47</span><br/><span className="t-counter-unit">Days</span>
+              <p className="t-counter-number static-countdown__card__number">47</p>
+              <p className="t-counter-unit">days</p>
             </div>
             <div className="static-countdown__card">
-              <span className="t-counter-number">07</span><br/><span className="t-counter-unit">Hours</span>
+              <p className="t-counter-number static-countdown__card__number">07</p>
+              <p className="t-counter-unit">hours</p>
             </div>
             <div className="static-countdown__card">
-              <span className="t-counter-number">56</span><br/><span className="t-counter-unit">Min</span>
+              <p className="t-counter-number static-countdown__card__number">56</p>
+              <p className="t-counter-unit">min</p>
             </div>
             <div className="static-countdown__card">
-              <span className="t-counter-number">14</span><br/><span className="t-counter-unit">Sec</span>
+              <p className="t-counter-number static-countdown__card__number">14</p>
+              <p className="t-counter-unit">sec</p>
             </div>
           </div>
         </div>
