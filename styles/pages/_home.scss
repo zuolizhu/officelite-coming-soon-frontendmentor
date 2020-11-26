@@ -313,7 +313,8 @@
     @media (min-width: 1024px) {
       width: 113.4rem;
       height: 113.4rem;
-      transform: translateX(22.6%) translateY(-55.7%);
+      min-width: 113.4rem;
+      transform: translateX(45.4%) translateY(-55.7%);
     }
   }
 }
