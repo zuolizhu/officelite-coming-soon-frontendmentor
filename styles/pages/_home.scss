@@ -25,6 +25,8 @@
   }
   
   &__content {
+    z-index: 10;
+    position: relative;
     margin-top: 5.9rem;
     text-align: center;
     @media (min-width: 768px) {
