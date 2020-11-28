@@ -215,6 +215,8 @@ img {
 }
 
 .header {
+  z-index: 10;
+  position: relative;
   padding: 4.6rem 0 0;
 }
 
@@ -230,10 +232,16 @@ img {
   }
 }
 
-.header__logo {
+.header .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.header__logo {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
