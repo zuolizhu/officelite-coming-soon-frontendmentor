@@ -1,14 +1,54 @@
 .signup-form {
+  width: 100%;
   margin: 0 auto;
-  width: 32.7rem;
   height: 46.5rem;
   padding: 2.4rem;
+  max-width: 44.5rem;
   border-radius: 1.3rem;
   background-color: var(--color-white);
+  box-shadow: 0 5rem 5rem -2.5rem rgba(75,92,154,0.25);
+  @media (min-width: 768px) {
+    height: 50.8rem;
+    padding: 4rem 4.2rem 5.1rem 4.3rem;
+  }
+  @media (min-width: 1200px) {
+    margin: 0;
+    margin-left: auto;
+  }
 
   input {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    padding-left: 1.6rem;
     padding-bottom: 1.5rem;
+    color: var(--color-dark-gray);
     border-bottom: 1px solid #BABDCA;
+
+    &:focus {
+      outline: var(--outline);
+      border-color: transparent;
+    }
+    
+    &::placeholder {
+      opacity: .50;
+    }
+
+    &.error {
+      color: var(--color-red);
+      background-size: 2rem 2rem;
+      background-repeat: no-repeat;
+      border-color: var(--color-red);
+      background-position: right 2rem top .4rem;
+      background-image: url(../../public/assets/sign-up/icon-cross.svg);
+    }
+    &.error::after {
+      content: '';
+      width: 2rem;
+      height: 2rem;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url(../../public/assets/sign-up/icon-cross.svg);
+    }
   }
   input:not(:last-of-type) {
     margin-bottom: 2.4rem;
@@ -28,7 +68,7 @@
     justify-content: space-between;
 
     &__arrow {
-      width: 2.8rem;
+      width: 5.9rem;
       height: 2.8rem;
       cursor: pointer;
       background-position: center;
@@ -45,6 +85,7 @@
       
       &.active {
         left: 0;
+        z-index: 5;
         top: 5.2rem;
         width: 100%;
         display: flex;
@@ -91,6 +132,7 @@
     &__plan {
       font-size: 1.6rem;
       line-height: 2.8rem;
+      padding-left: 1.6rem;
       color: var(--color-dark-gray);
       font-weight: var(--weight-bold);
       span {

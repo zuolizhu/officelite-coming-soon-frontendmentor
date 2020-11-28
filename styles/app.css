@@ -43,6 +43,7 @@ input {
   padding: 0;
   width: 100%;
   border: none;
+  font-family: 'Kumbh Sans', sans-serif;
 }
 
 #__next {
@@ -400,17 +401,77 @@ button {
 }
 
 .signup-form {
+  width: 100%;
   margin: 0 auto;
-  width: 32.7rem;
   height: 46.5rem;
   padding: 2.4rem;
+  max-width: 44.5rem;
   border-radius: 1.3rem;
   background-color: var(--color-white);
+  -webkit-box-shadow: 0 5rem 5rem -2.5rem rgba(75, 92, 154, 0.25);
+          box-shadow: 0 5rem 5rem -2.5rem rgba(75, 92, 154, 0.25);
+}
+
+@media (min-width: 768px) {
+  .signup-form {
+    height: 50.8rem;
+    padding: 4rem 4.2rem 5.1rem 4.3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .signup-form {
+    margin: 0;
+    margin-left: auto;
+  }
 }
 
 .signup-form input {
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  padding-left: 1.6rem;
   padding-bottom: 1.5rem;
+  color: var(--color-dark-gray);
   border-bottom: 1px solid #BABDCA;
+}
+
+.signup-form input:focus {
+  outline: var(--outline);
+  border-color: transparent;
+}
+
+.signup-form input::-webkit-input-placeholder {
+  opacity: .50;
+}
+
+.signup-form input:-ms-input-placeholder {
+  opacity: .50;
+}
+
+.signup-form input::-ms-input-placeholder {
+  opacity: .50;
+}
+
+.signup-form input::placeholder {
+  opacity: .50;
+}
+
+.signup-form input.error {
+  color: var(--color-red);
+  background-size: 2rem 2rem;
+  background-repeat: no-repeat;
+  border-color: var(--color-red);
+  background-position: right 2rem top .4rem;
+  background-image: url(../../public/assets/sign-up/icon-cross.svg);
+}
+
+.signup-form input.error::after {
+  content: '';
+  width: 2rem;
+  height: 2rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../../public/assets/sign-up/icon-cross.svg);
 }
 
 .signup-form input:not(:last-of-type) {
@@ -438,7 +499,7 @@ button {
 }
 
 .plan-selector-container .plan-selector__arrow {
-  width: 2.8rem;
+  width: 5.9rem;
   height: 2.8rem;
   cursor: pointer;
   background-position: center;
@@ -459,6 +520,7 @@ button {
 
 .plan-selector-container .plan-selector__menu.active {
   left: 0;
+  z-index: 5;
   top: 5.2rem;
   width: 100%;
   display: -webkit-box;
@@ -517,6 +579,7 @@ button {
 .plan-selector-container .plan-selector__plan {
   font-size: 1.6rem;
   line-height: 2.8rem;
+  padding-left: 1.6rem;
   color: var(--color-dark-gray);
   font-weight: var(--weight-bold);
 }
@@ -1294,6 +1357,7 @@ button {
 
 @media (min-width: 1200px) {
   .signup-countdown {
+    margin-top: 0;
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
     grid-row: 2/3;
@@ -1309,13 +1373,16 @@ button {
 }
 
 @media (min-width: 1200px) {
-  .signup-countdown .container--signup-countdown .countdown__info {
+  .signup-countdown .container--signup-countdown {
     text-align: left;
+    padding: 0;
   }
 }
 
 .signup-form-wrap {
   padding-top: 2.4rem;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
   padding-bottom: 8.7rem;
 }
 

@@ -40,7 +40,7 @@ export default function PlanSelector() {
 
   return (
     <Field name={fieldName} id={fieldName} type="text">
-    {({ field: { value }, form: { setFieldValue } }) => (
+    {({ form: { setFieldValue } }) => (
       <div className="plan-selector-container">
         <label htmlFor={fieldName} className={"sr-only"}>{fieldName}</label>
         <button onClick={() => setIsActive( prev => !prev )} type="button" className="plan-selector">
@@ -53,7 +53,10 @@ export default function PlanSelector() {
           { plans.map(plan => (
           <div 
             key={plan.planName}
-            onClick={() => handlePlanClick(plan.planName)}
+            onClick={() => {
+              handlePlanClick(plan.planName)
+              setFieldValue(fieldName, plan.planName)
+            }}
             className={`plan-selector__menu__item${plan.isSelected ? ' selected' : ''}`}
           >
             {plan.planName} <span>{plan.price}</span>

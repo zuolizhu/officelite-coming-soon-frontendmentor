@@ -4,12 +4,12 @@ import { Formik, Form, Field } from 'formik'
 import PlanSelector from './PlanSelector'
 
 
-const SignupSchema = Yup.object().shape({
-  name: Yup.string().required(),
-  email: Yup.string().email('Invalid email').required(),
-  phoneNumber: Yup.string().required(),
-  companyName: Yup.string().required()
-})
+const SignupSchema = Yup.object({
+  name: Yup.string().required('Required'),
+  emailAddress: Yup.string().email('Invalid email address').required('Required'),
+  phoneNumber: Yup.string().required('Required'),
+  companyName: Yup.string().required('Required')
+});
 
 export default function SignUpForm() {
 
@@ -19,13 +19,16 @@ export default function SignUpForm() {
         initialValues={{
           name: '',
           emailAddress: '',
+          plan: 'Basic Pack',
           phoneNumber: '',
           companyName: ''
         }}
         validationSchema={SignupSchema}
-        onSubmit={values => {
-          console.log('submit!')
-          alert(values)
+        onSubmit={(values, { setSubmitting }) => {
+          setTimeout(() => {
+            alert(JSON.stringify(values, null, 2));
+            setSubmitting(false);
+          }, 400);
         }}
       >
         {({ errors, touched }) => (
@@ -37,8 +40,8 @@ export default function SignUpForm() {
             <label className="sr-only" htmlFor="phoneNumber">Phone Number</label>
             <PlanSelector />
             <Field name="phoneNumber" placeholder="Phone Number" className={errors.phoneNumber && touched.phoneNumber ? 'error': ''} />
-            <label className="sr-only" htmlFor="companyName">Company Name</label>
-            <Field name="companyName" placeholder="Company Name" className={errors.companyName && touched.companyName ? 'error': ''} />
+            <label className="sr-only" htmlFor="companyName">Company</label>
+            <Field name="companyName" placeholder="Company" className={errors.companyName && touched.companyName ? 'error': ''} />
             <button className="btn btn--blue btn--blue--signup" type="submit">Get on the list</button>
           </Form>
         )}

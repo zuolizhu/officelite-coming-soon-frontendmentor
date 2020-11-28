@@ -64,6 +64,7 @@
   margin-top: 6.4rem;
   
   @media (min-width: 1200px) {
+    margin-top: 0;
     grid-row: 2/3;
     grid-column: 2/3;
   }
@@ -71,16 +72,17 @@
   .container--signup-countdown {
     padding: 0 2.4rem;
     text-align: center;
-    .countdown__info {
-      @media (min-width: 1200px) {
-        text-align: left;
-      }
+    @media (min-width: 1200px) {
+      text-align: left;
+      padding: 0;
     }
   }
 }
 
 .signup-form-wrap {
   padding-top: 2.4rem;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
   padding-bottom: 8.7rem;
   @media (min-width: 768px) {
     padding-top: 6.4rem;
