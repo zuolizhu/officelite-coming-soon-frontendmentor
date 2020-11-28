@@ -1,12 +1,19 @@
 import Head from 'next/head'
+import clsx from 'clsx'
 import Header from '../components/Header'
 
 export default function Layout({
   children,
-  isHomepage,
+  isSignUp = false,
+  isHomepage = false,
   title = 'Frontend Mentor | Officelite coming soon site'
 }) {
-  const mainClasses = isHomepage ? 'main home' : 'main'
+  const mainClasses = clsx({
+    'main': true,
+    'home': isHomepage,
+    'signup': isSignUp
+  })
+
   return (
     <>
       <Head>
@@ -17,7 +24,7 @@ export default function Layout({
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet" />
       </Head>
-      <Header isHomepage={isHomepage} />
+      <Header />
       <main className={mainClasses}>
         {children}
       </main>
