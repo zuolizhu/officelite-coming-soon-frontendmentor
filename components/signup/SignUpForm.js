@@ -1,8 +1,7 @@
 import React from 'react'
 import * as Yup from 'yup'
-import Select, { components } from 'react-select'
 import { Formik, Form, Field } from 'formik'
-import { CustomSelectStyles } from './CustomSelectStyle'
+import PlanSelector from './PlanSelector'
 
 
 const SignupSchema = Yup.object().shape({
@@ -12,20 +11,6 @@ const SignupSchema = Yup.object().shape({
   companyName: Yup.string().required()
 })
 
-const SelectOptions = [
-  { value: 'basic', label: 'Basic Pack', price: 'Free' },
-  { value: 'pro', label: 'Pro Pack', price: '$9.99' },
-  { value: 'ultimate', label: 'Ultimate Pack', price: '$19.99' }
-]
-
-const DropdownIndicator = props => {
-  return (
-    <components.DropdownIndicator {...props}>
-      <div className="dropdown-arrow"></div>
-    </components.DropdownIndicator>
-  );
-};
-
 export default function SignUpForm() {
 
   return (
@@ -34,7 +19,6 @@ export default function SignUpForm() {
         initialValues={{
           name: '',
           emailAddress: '',
-          plan: 'Basic Pack',
           phoneNumber: '',
           companyName: ''
         }}
@@ -44,24 +28,14 @@ export default function SignUpForm() {
           alert(values)
         }}
       >
-        {({ errors, touched, handleBlur, setFieldValue }) => (
+        {({ errors, touched }) => (
           <Form className="signup-form">
             <label className="sr-only" htmlFor="name">name</label>
             <Field name="name" placeholder="Name" className={errors.name && touched.name ? 'error': ''} />
             <label className="sr-only" htmlFor="emailAddress">Email Address</label>
             <Field name="emailAddress" placeholder="Email Address" className={errors.emailAddress && touched.emailAddress ? 'error': ''} />
-            <Select
-              name="plan"
-              label="plan"
-              instanceId={"plan"}
-              onBlur={handleBlur}
-              styles={CustomSelectStyles}
-              options={SelectOptions}
-              defaultValue={SelectOptions[0]}
-              components={{ DropdownIndicator }}
-              onChange={option => setFieldValue('plan', option)}
-            />
             <label className="sr-only" htmlFor="phoneNumber">Phone Number</label>
+            <PlanSelector />
             <Field name="phoneNumber" placeholder="Phone Number" className={errors.phoneNumber && touched.phoneNumber ? 'error': ''} />
             <label className="sr-only" htmlFor="companyName">Company Name</label>
             <Field name="companyName" placeholder="Company Name" className={errors.companyName && touched.companyName ? 'error': ''} />
