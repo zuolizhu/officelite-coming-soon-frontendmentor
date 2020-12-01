@@ -1,13 +1,15 @@
 import React from 'react'
 import StaticCountDown from '../StaticCountDown'
+import DynamicCountDown from '../DynamicCountDown'
 
-export default function SignUpCountDown() {
+export default function SignUpCountDown({ isStatic }) {
+  const comingDate = new Date(Date.now() + 12 * 24 * 57 * 60 * 1000)
   return (
     <section className="signup-countdown">
       <div className="container container--signup-countdown">
         <div className="countdown__info">
-          <p className="t-coming"><span className="t-dark-gray">Coming</span> <span className="t-blue">4 Nov 2020</span></p>
-          <StaticCountDown isDark={false} />
+          <p className="t-coming"><span className="t-dark-gray">Coming</span> <span className="t-blue">{comingDate.getDay()} {comingDate.toLocaleString('default', { month: 'short' })} {comingDate.getFullYear()}</span></p>
+          {isStatic ? <StaticCountDown isDark={false} /> : <DynamicCountDown isDark={false} /> }
         </div>
       </div>
     </section>
