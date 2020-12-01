@@ -8,6 +8,7 @@ export default function HomeCountDown({ isStatic }) {
 
   return (
     <section className="home-countdown">
+      <h2 className="sr-only">count down</h2>
       <div className="container container--countdown">
         <div className="countdown__info">
           <p className="t-coming"><span className="t-white">Coming</span> <span className="t-blue">{comingDate.getDay()} {comingDate.toLocaleString('default', { month: 'short' })} {comingDate.getFullYear()}</span></p>
