@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import clsx from 'clsx'
+import { motion } from 'framer-motion'
 import Header from '../components/Header'
 
 export default function Layout({
@@ -24,10 +25,16 @@ export default function Layout({
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet" />
       </Head>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        >
       <Header />
       <main className={mainClasses}>
         {children}
       </main>
+      </motion.div>
     </>
   )
 }

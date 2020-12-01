@@ -8,7 +8,7 @@ export default function signup() {
   return (
     <Layout isSignUp={true} >
       <SignUpHero />
-      <SignUpCountDown isStatic={true} />
+      <SignUpCountDown isStatic={false} />
       <SignUpForm />
       <SignupSideBg />
     </Layout>

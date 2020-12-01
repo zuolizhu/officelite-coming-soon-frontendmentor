@@ -1,12 +1,20 @@
 import React from 'react'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 export default function HomePlans() {
   return (
     <section className="home-plans">
       <div className="container container--home-plans">
         <div className="plans">
-          <div className="plan plan--white">
+          <motion.div
+            initial={{ opacity: 0, y: 90 }}
+            animate={{ opacity: 1, y: 0, 
+              transition : {
+                type: "spring",
+                delay: 0.5
+            }}}
+            className="plan plan--white">
             <div className="plan__heading">
               <h2 className="plan__type t-h2">Basic</h2>
               <p className="plan__price t-price">Free</p>
@@ -20,8 +28,15 @@ export default function HomePlans() {
             <Link href="/signup">
               <a className="btn btn--light-blue plan__cta-btn">Try for Free</a>
             </Link>
-          </div>
-          <div className="plan plan--blue">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 90 }}
+            animate={{ opacity: 1, y: 0, 
+              transition : {
+                type: "spring",
+                delay: 0.75
+            }}}
+            className="plan plan--blue">
             <div className="plan__heading">
               <h2 className="plan__type t-h2">Pro</h2>
               <p className="plan__price t-price">$9.99</p>
@@ -35,8 +50,15 @@ export default function HomePlans() {
             <Link href="/signup">
               <a className="btn btn--white plan__cta-btn">Try for Free</a>
             </Link>
-          </div>
-          <div className="plan plan--white">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 90 }}
+            animate={{ opacity: 1, y: 0, 
+              transition : {
+                type: "spring",
+                delay: 1
+            }}}
+            className="plan plan--white">
             <div className="plan__heading">
               <h2 className="plan__type t-h2">Ultimate</h2>
               <p className="plan__price t-price">$19.99</p>
@@ -50,7 +72,7 @@ export default function HomePlans() {
             <Link href="/signup">
               <a className="btn btn--light-blue plan__cta-btn">Try for Free</a>
             </Link>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
