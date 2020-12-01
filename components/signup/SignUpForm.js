@@ -2,7 +2,7 @@ import React from 'react'
 import * as Yup from 'yup'
 import { Formik, Form, Field } from 'formik'
 import PlanSelector from './PlanSelector'
-import { motion } from 'framer-motion'
+
 
 const SignupSchema = Yup.object({
   name: Yup.string().required('Required'),
@@ -14,14 +14,7 @@ const SignupSchema = Yup.object({
 export default function SignUpForm() {
 
   return (
-    <motion.section 
-      initial={{ opacity: 0, y: -90 }}
-      animate={{ opacity: 1, y: 0, 
-        transition : {
-          type: "spring",
-          delay: 0.5
-      }}}
-    className="signup-form-wrap">
+    <section className="signup-form-wrap">
       <Formik
         initialValues={{
           name: '',
@@ -53,6 +46,6 @@ export default function SignUpForm() {
           </Form>
         )}
       </Formik>
-    </motion.section>
+    </section>
   )
 }
